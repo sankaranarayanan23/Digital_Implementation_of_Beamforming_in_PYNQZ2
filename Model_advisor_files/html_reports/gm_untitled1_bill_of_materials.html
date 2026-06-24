@@ -1,0 +1,6239 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="rtwreport.css" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>
+High-level Resource Utilization Report for gm_untitled1
+</title>
+
+</head>
+<body bgcolor="#ffffff" link="0033CC" vlink="#666666" onload="try {if (top) {if (top.rtwPageOnLoad) top.rtwPageOnLoad('rtwIdBillOfMaterials'); else local_onload();}} catch(err) {};hdlTableShrink(this, 'Multiplier_1_1');hdlTableShrink(this, 'Multiplier_1_2');hdlTableShrink(this, 'Multiplier_1_3');hdlTableShrink(this, 'Multiplier_1_4');hdlTableShrink(this, 'Adder_1_1');hdlTableShrink(this, 'Subtractor_1_1');hdlTableShrink(this, 'Register_1_1');hdlTableShrink(this, 'Input_Port');hdlTableShrink(this, 'Output_Port');hdlTableShrink(this, 'Adder_2_1');hdlTableShrink(this, 'Subtractor_2_1');hdlTableShrink(this, 'Subtractor_2_2');hdlTableShrink(this, 'Register_2_1');hdlTableShrink(this, 'Register_2_2');hdlTableShrink(this, 'Multiplexer_2_1');hdlTableShrink(this, 'Multiplexer_2_2');hdlTableShrink(this, 'Static Shift Right_2_1');hdlTableShrink(this, 'Adder_3_1');hdlTableShrink(this, 'Subtractor_3_1');hdlTableShrink(this, 'Subtractor_3_2');hdlTableShrink(this, 'Register_3_1');hdlTableShrink(this, 'Register_3_2');hdlTableShrink(this, 'Multiplexer_3_1');hdlTableShrink(this, 'Multiplexer_3_2');hdlTableShrink(this, 'Static Shift Right_3_1');hdlTableShrink(this, 'Adder_4_1');hdlTableShrink(this, 'Subtractor_4_1');hdlTableShrink(this, 'Subtractor_4_2');hdlTableShrink(this, 'Register_4_1');hdlTableShrink(this, 'Register_4_2');hdlTableShrink(this, 'Multiplexer_4_1');hdlTableShrink(this, 'Multiplexer_4_2');hdlTableShrink(this, 'Static Shift Right_4_1');hdlTableShrink(this, 'Adder_5_1');hdlTableShrink(this, 'Subtractor_5_1');hdlTableShrink(this, 'Subtractor_5_2');hdlTableShrink(this, 'Register_5_1');hdlTableShrink(this, 'Register_5_2');hdlTableShrink(this, 'Multiplexer_5_1');hdlTableShrink(this, 'Static Shift Right_5_1');hdlTableShrink(this, 'Adder_6_1');hdlTableShrink(this, 'Subtractor_6_1');hdlTableShrink(this, 'Subtractor_6_2');hdlTableShrink(this, 'Register_6_1');hdlTableShrink(this, 'Register_6_2');hdlTableShrink(this, 'Multiplexer_6_1');hdlTableShrink(this, 'Multiplexer_6_2');hdlTableShrink(this, 'Static Shift Right_6_1');">
+<script>
+<!--
+function hdlTableShrink(o,tagNameStr)
+{
+var temp = document.getElementsByName(tagNameStr);
+if (temp[0].style.display == "")
+{
+	temp[0].style.display = "none";
+	o.innerHTML = '<span style="font-family:monospace">[+]</span>';
+}
+else
+{
+	temp[0].style.display = "";
+	o.innerHTML = '<span style="font-family:monospace">[-]</span>';
+}
+}
+// -->
+</script>
+<script>
+<!--
+function hdlTableCollapseAll(o, numNtks, numComps)
+{
+	var id = "";
+	for (i = 1; i <= numNtks; i++)
+	{
+		for (j = 1; j <= numComps; j++)
+		{
+			id = "Multiply" + "_" + i + "_" + j;
+			var temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "none";
+			}
+			id = "Adder" + "_" + i + "_" + j;
+			temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "none";
+			}
+			id = "Subtractor" + "_" + i + "_" + j;
+			temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "none";
+			}
+			id = "Register" + "_" + i + "_" + j;
+			temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "none";
+			}
+			id = "RAM" + "_" + i + "_" + j;
+			temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "none";
+			}
+			id = "Multiplexer" + "_" + i + "_" + j;
+			temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "none";
+			}
+		}
+	}
+	var collapsibles = document.getElementsByName('collapsible');
+	for (i = 0; i < collapsibles.length; i++)
+	{
+		collapsibles[i].innerHTML = '<span style="font-family:monospace">[+]</span>';
+	}
+}
+// -->
+</script>
+<script>
+<!--
+function hdlTableExpandAll(o, numNtks, numComps)
+{
+	var id = "";
+	for (i = 1; i <= numNtks; i++)
+	{
+		for (j = 1; j <= numComps; j++)
+		{
+			id = "Multiply" + "_" + i + "_" + j;
+			var temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "";
+			}
+			id = "Adder" + "_" + i + "_" + j;
+			temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "";
+			}
+			id = "Subtractor" + "_" + i + "_" + j;
+			temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "";
+			}
+			id = "Register" + "_" + i + "_" + j;
+			temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "";
+			}
+			id = "RAM" + "_" + i + "_" + j;
+			temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "";
+			}
+			id = "Multiplexer" + "_" + i + "_" + j;
+			temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "";
+			}
+		}
+	}
+	var collapsibles = document.getElementsByName('collapsible');
+	for (i = 0; i < collapsibles.length; i++)
+	{
+		collapsibles[i].innerHTML = '<span style="font-family:monospace">[-]</span>';
+	}
+}
+// -->
+</script>
+<font SIZE="+2" COLOR="#000066">
+Generic Resource Report for gm_untitled1
+</font>
+<br /><br /><br /><a name="Summary">
+<font size="+1" color="#000066">
+<b class="midprod">
+Summary
+</b>
+
+</font>
+
+</a>
+<br /><br /><table width="100%" border="1">
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+Multipliers
+</td>
+<td align="center" valign="top" style="border-style: none">
+21
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+Adders/Subtractors
+</td>
+<td align="center" valign="top" style="border-style: none">
+361
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+Registers
+</td>
+<td align="center" valign="top" style="border-style: none">
+496
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+Total 1-Bit Registers
+</td>
+<td align="center" valign="top" style="border-style: none">
+13240
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+RAMs
+</td>
+<td align="center" valign="top" style="border-style: none">
+0
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+Multiplexers
+</td>
+<td align="center" valign="top" style="border-style: none">
+209
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+I/O Bits
+</td>
+<td align="center" valign="top" style="border-style: none">
+180
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+Static Shift operators
+</td>
+<td align="center" valign="top" style="border-style: none">
+99
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+Dynamic Shift operators
+</td>
+<td align="center" valign="top" style="border-style: none">
+0
+</td>
+
+</tr>
+
+</table>
+<br /><br /><a name="Detailed Report">
+<font size="+1" color="#000066">
+<b class="midprod">
+Detailed Report
+</b>
+
+</font>
+
+</a>
+<br /><br /><p><hr /></p><h5>
+Report for Subsystem:    <a href="matlab:coder.internal.code2model('gm_untitled1:1')" name="code2model" class="code2model">
+Subsystem
+</a>
+
+</h5>
+<h5>
+Multipliers (21)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Multiplier_1_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+16x16-bit Multiplier 							: 4
+</span>
+<span name="Multiplier_1_1" id="Multiplier_1_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:12')" name="code2model" class="code2model">
+Gain4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:13')" name="code2model" class="code2model">
+Gain5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:14')" name="code2model" class="code2model">
+Gain6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:15')" name="code2model" class="code2model">
+Gain7
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Multiplier_1_2')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+16x64-bit Multiplier 							: 4
+</span>
+<span name="Multiplier_1_2" id="Multiplier_1_2">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:16')" name="code2model" class="code2model">
+Product
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Multiplier_1_3')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+64x16-bit Multiplier 							: 12
+</span>
+<span name="Multiplier_1_3" id="Multiplier_1_3">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:17')" name="code2model" class="code2model">
+Product1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:18')" name="code2model" class="code2model">
+Product2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:19')" name="code2model" class="code2model">
+Product3
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Multiplier_1_4')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+32x32-bit Multiplier 							: 1
+</span>
+<span name="Multiplier_1_4" id="Multiplier_1_4">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:11')" name="code2model" class="code2model">
+Gain3
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><h5>
+Adders/Subtractors (14)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Adder_1_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+16x16-bit Adder 							: 10
+</span>
+<span name="Adder_1_1" id="Adder_1_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:16')" name="code2model" class="code2model">
+Product
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:17')" name="code2model" class="code2model">
+Product1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:20')" name="code2model" class="code2model">
+Add
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:18')" name="code2model" class="code2model">
+Product2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:19')" name="code2model" class="code2model">
+Product3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:21')" name="code2model" class="code2model">
+Add1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:22')" name="code2model" class="code2model">
+Add2
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Subtractor_1_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+16x16-bit Subtractor 							: 4
+</span>
+<span name="Subtractor_1_1" id="Subtractor_1_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:16')" name="code2model" class="code2model">
+Product
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:17')" name="code2model" class="code2model">
+Product1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:18')" name="code2model" class="code2model">
+Product2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:19')" name="code2model" class="code2model">
+Product3
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><h5>
+Registers (192)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Register_1_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+16-bit Register 							: 192
+</span>
+<span name="Register_1_1" id="Register_1_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:48')" name="code2model" class="code2model">
+delayMatch
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:50')" name="code2model" class="code2model">
+delayMatch2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:49')" name="code2model" class="code2model">
+delayMatch1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:51')" name="code2model" class="code2model">
+delayMatch3
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><h5>
+Number of I/O Bits (180)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Input_Port')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+Number of Input Bits: 147
+</span>
+<span name="Input_Port" id="Input_Port">
+<ul class="SystemdefinedCollapse" id="9091ebe6-23b6-4628-8c45-5222a74c5f9c" dataCollapse="off">
+<li>
+clk: 1 bit
+</li>
+<li>
+reset: 1 bit
+</li>
+<li>
+clk_enable: 1 bit
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:2')" name="code2model" class="code2model">
+In1
+</a>
+: 16 bits
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:2')" name="code2model" class="code2model">
+In1
+</a>
+: 16 bits
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:3')" name="code2model" class="code2model">
+In2
+</a>
+: 16 bits
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:3')" name="code2model" class="code2model">
+In2
+</a>
+: 16 bits
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:4')" name="code2model" class="code2model">
+In3
+</a>
+: 16 bits
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:4')" name="code2model" class="code2model">
+In3
+</a>
+: 16 bits
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:5')" name="code2model" class="code2model">
+In4
+</a>
+: 16 bits
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:5')" name="code2model" class="code2model">
+In4
+</a>
+: 16 bits
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:6')" name="code2model" class="code2model">
+theta
+</a>
+: 16 bits
+</li>
+
+</ul>
+<span class="SDCollapseControl" onclick="collapseSD(this, '9091ebe6-23b6-4628-8c45-5222a74c5f9c')" onmouseover="this.style.cursor = 'pointer'">
+&#8743; Less
+</span>
+<br />
+</span>
+<br /><span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Output_Port')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+Number of Output Bits: 33
+</span>
+<span name="Output_Port" id="Output_Port">
+<ul>
+<li>
+ce_out: 1 bit
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:7')" name="code2model" class="code2model">
+y
+</a>
+: 16 bits
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:7')" name="code2model" class="code2model">
+y
+</a>
+: 16 bits
+</li>
+
+</ul>
+
+</span>
+<br /><p><hr /></p><h5>
+Report for Subsystem:    <a href="matlab:coder.internal.code2model('gm_untitled1:43')" name="code2model" class="code2model">
+cos + jsin3
+</a>
+
+</h5>
+<h5>
+Adders/Subtractors (71)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Adder_2_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+64x64-bit Adder 							: 34
+</span>
+<span name="Adder_2_1" id="Adder_2_1">
+<ul class="SystemdefinedCollapse" id="5584029b-0e9f-45f6-b537-19d1e86b4e77" dataCollapse="off">
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+thetaPlusOnePi
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+thetaPlusTwoPi
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+lut_value_temp_1_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+lut_value_temp_1_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+lut_value_temp_1_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+lut_value_temp_1_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+lut_value_temp_1_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+lut_value_temp_1_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+lut_value_temp_1_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+lut_value_temp_1_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+lut_value_temp_1_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+lut_value_temp_1_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_temp_1_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_temp_0_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_temp_1_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_temp_0_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_temp_1_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_temp_0_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_temp_1_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_temp_0_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_temp_1_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_temp_0_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_temp_1_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_temp_0_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_temp_1_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_temp_0_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_temp_1_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_temp_0_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_temp_1_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_temp_0_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_temp_1_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_temp_0_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_temp_1_11
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_temp_0_11
+</a>
+
+</li>
+
+</ul>
+<span class="SDCollapseControl" onclick="collapseSD(this, '5584029b-0e9f-45f6-b537-19d1e86b4e77')" onmouseover="this.style.cursor = 'pointer'">
+&#8743; Less
+</span>
+<br />
+</span>
+<br /><span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Subtractor_2_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+65-bit Subtractor 							: 3
+</span>
+<span name="Subtractor_2_1" id="Subtractor_2_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+negatepiOver2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_p_negate
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_p_negate
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Subtractor_2_2')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+64x64-bit Subtractor 							: 34
+</span>
+<span name="Subtractor_2_2" id="Subtractor_2_2">
+<ul class="SystemdefinedCollapse" id="a4dd6419-05e1-4559-bec3-f4d8e4292775" dataCollapse="off">
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+thetaMinusOnePi
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+thetaMinusTwoPi
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+lut_value_temp_0_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+lut_value_temp_0_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+lut_value_temp_0_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+lut_value_temp_0_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+lut_value_temp_0_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+lut_value_temp_0_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+lut_value_temp_0_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+lut_value_temp_0_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+lut_value_temp_0_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+lut_value_temp_0_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_temp_0_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_temp_1_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_temp_0_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_temp_1_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_temp_0_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_temp_1_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_temp_0_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_temp_1_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_temp_0_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_temp_1_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_temp_0_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_temp_1_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_temp_0_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_temp_1_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_temp_0_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_temp_1_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_temp_0_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_temp_1_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_temp_0_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_temp_1_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_temp_0_11
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_temp_1_11
+</a>
+
+</li>
+
+</ul>
+<span class="SDCollapseControl" onclick="collapseSD(this, 'a4dd6419-05e1-4559-bec3-f4d8e4292775')" onmouseover="this.style.cursor = 'pointer'">
+&#8743; Less
+</span>
+<br />
+</span>
+<br /><h5>
+Registers (61)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Register_2_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+1-bit Register 							: 24
+</span>
+<span name="Register_2_1" id="Register_2_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+negate_reg
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Register_2_2')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+64-bit Register 							: 37
+</span>
+<span name="Register_2_2" id="Register_2_2">
+<ul class="SystemdefinedCollapse" id="bb5be97e-e693-4e1a-a8eb-b0fc9888cf18" dataCollapse="off">
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+z0_reg
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+z_reg
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+z_reg_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+z_reg_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+z_reg_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+z_reg_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+z_reg_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+z_reg_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+z_reg_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+z_reg_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+z_reg_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_temp0_reg
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_temp_reg
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_reg
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_temp0_reg
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_temp_reg
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_reg
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_reg_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_reg_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_reg_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_reg_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_reg_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_reg_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_reg_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_reg_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_reg_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_reg_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_reg_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_reg_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_reg_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_reg_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_reg_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_reg_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_reg_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_reg_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_reg_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_reg_10
+</a>
+
+</li>
+
+</ul>
+<span class="SDCollapseControl" onclick="collapseSD(this, 'bb5be97e-e693-4e1a-a8eb-b0fc9888cf18')" onmouseover="this.style.cursor = 'pointer'">
+&#8743; Less
+</span>
+<br />
+</span>
+<br /><h5>
+Multiplexers (44)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Multiplexer_2_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+1-bit 2-to-1 Multiplexer 							: 4
+</span>
+<span name="Multiplexer_2_1" id="Multiplexer_2_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+Switch3_c1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+Switch4_c1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+Switch_c1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+Switch1_c1
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Multiplexer_2_2')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+64-bit 2-to-1 Multiplexer 							: 40
+</span>
+<span name="Multiplexer_2_2" id="Multiplexer_2_2">
+<ul class="SystemdefinedCollapse" id="d0b32eaf-68d1-47f1-8b13-bea0b4a00738" dataCollapse="off">
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+Switch3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+Switch4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+Switch
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+Switch1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+lut_value_rotated_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+lut_value_rotated_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+lut_value_rotated_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+lut_value_rotated_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+lut_value_rotated_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+lut_value_rotated_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+lut_value_rotated_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+lut_value_rotated_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+lut_value_rotated_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+lut_value_rotated_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_rotated_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_rotated_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_rotated_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_rotated_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_rotated_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_rotated_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_rotated_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_rotated_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_rotated_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_rotated_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_rotated_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_rotated_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_rotated_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_rotated_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_rotated_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_rotated_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_rotated_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_rotated_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_rotated_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_rotated_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+x_rotated_11
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+xout_post
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+y_rotated_11
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+yout_post
+</a>
+
+</li>
+
+</ul>
+<span class="SDCollapseControl" onclick="collapseSD(this, 'd0b32eaf-68d1-47f1-8b13-bea0b4a00738')" onmouseover="this.style.cursor = 'pointer'">
+&#8743; Less
+</span>
+<br />
+</span>
+<br /><h5>
+Number of Shift operators (20)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Static Shift Right_2_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+Static Shift Right 							: 20
+</span>
+<span name="Static Shift Right_2_1" id="Static Shift Right_2_1">
+<ul class="SystemdefinedCollapse" id="0d83d686-23a1-4536-8955-dbfdc2bf1b88" dataCollapse="off">
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+Bit_shift_comp_y_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+Bit_shift_comp_x_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+Bit_shift_comp_y_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+Bit_shift_comp_x_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+Bit_shift_comp_y_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+Bit_shift_comp_x_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+Bit_shift_comp_y_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+Bit_shift_comp_x_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+Bit_shift_comp_y_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+Bit_shift_comp_x_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+Bit_shift_comp_y_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+Bit_shift_comp_x_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+Bit_shift_comp_y_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+Bit_shift_comp_x_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+Bit_shift_comp_y_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+Bit_shift_comp_x_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+Bit_shift_comp_y_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+Bit_shift_comp_x_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+Bit_shift_comp_y_11
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:46')" name="code2model" class="code2model">
+Bit_shift_comp_x_11
+</a>
+
+</li>
+
+</ul>
+<span class="SDCollapseControl" onclick="collapseSD(this, '0d83d686-23a1-4536-8955-dbfdc2bf1b88')" onmouseover="this.style.cursor = 'pointer'">
+&#8743; Less
+</span>
+<br />
+</span>
+<br /><p><hr /></p><h5>
+Report for Subsystem:    <a href="matlab:coder.internal.code2model('gm_untitled1:38')" name="code2model" class="code2model">
+cos + jsin2
+</a>
+
+</h5>
+<h5>
+Adders/Subtractors (71)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Adder_3_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+64x64-bit Adder 							: 34
+</span>
+<span name="Adder_3_1" id="Adder_3_1">
+<ul class="SystemdefinedCollapse" id="86497014-2521-4569-87b0-52c0aa0d1036" dataCollapse="off">
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+thetaPlusOnePi
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+thetaPlusTwoPi
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+lut_value_temp_1_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+lut_value_temp_1_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+lut_value_temp_1_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+lut_value_temp_1_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+lut_value_temp_1_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+lut_value_temp_1_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+lut_value_temp_1_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+lut_value_temp_1_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+lut_value_temp_1_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+lut_value_temp_1_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_temp_1_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_temp_0_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_temp_1_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_temp_0_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_temp_1_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_temp_0_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_temp_1_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_temp_0_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_temp_1_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_temp_0_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_temp_1_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_temp_0_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_temp_1_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_temp_0_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_temp_1_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_temp_0_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_temp_1_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_temp_0_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_temp_1_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_temp_0_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_temp_1_11
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_temp_0_11
+</a>
+
+</li>
+
+</ul>
+<span class="SDCollapseControl" onclick="collapseSD(this, '86497014-2521-4569-87b0-52c0aa0d1036')" onmouseover="this.style.cursor = 'pointer'">
+&#8743; Less
+</span>
+<br />
+</span>
+<br /><span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Subtractor_3_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+65-bit Subtractor 							: 3
+</span>
+<span name="Subtractor_3_1" id="Subtractor_3_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+negatepiOver2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_p_negate
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_p_negate
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Subtractor_3_2')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+64x64-bit Subtractor 							: 34
+</span>
+<span name="Subtractor_3_2" id="Subtractor_3_2">
+<ul class="SystemdefinedCollapse" id="9dd63a72-52ba-4e51-a876-18f05c4d1da6" dataCollapse="off">
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+thetaMinusOnePi
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+thetaMinusTwoPi
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+lut_value_temp_0_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+lut_value_temp_0_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+lut_value_temp_0_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+lut_value_temp_0_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+lut_value_temp_0_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+lut_value_temp_0_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+lut_value_temp_0_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+lut_value_temp_0_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+lut_value_temp_0_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+lut_value_temp_0_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_temp_0_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_temp_1_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_temp_0_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_temp_1_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_temp_0_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_temp_1_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_temp_0_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_temp_1_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_temp_0_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_temp_1_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_temp_0_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_temp_1_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_temp_0_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_temp_1_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_temp_0_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_temp_1_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_temp_0_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_temp_1_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_temp_0_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_temp_1_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_temp_0_11
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_temp_1_11
+</a>
+
+</li>
+
+</ul>
+<span class="SDCollapseControl" onclick="collapseSD(this, '9dd63a72-52ba-4e51-a876-18f05c4d1da6')" onmouseover="this.style.cursor = 'pointer'">
+&#8743; Less
+</span>
+<br />
+</span>
+<br /><h5>
+Registers (61)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Register_3_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+1-bit Register 							: 24
+</span>
+<span name="Register_3_1" id="Register_3_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+negate_reg
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Register_3_2')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+64-bit Register 							: 37
+</span>
+<span name="Register_3_2" id="Register_3_2">
+<ul class="SystemdefinedCollapse" id="72b55162-428f-470c-bf59-108c901bfdb6" dataCollapse="off">
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+z0_reg
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+z_reg
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+z_reg_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+z_reg_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+z_reg_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+z_reg_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+z_reg_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+z_reg_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+z_reg_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+z_reg_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+z_reg_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_temp0_reg
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_temp_reg
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_reg
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_temp0_reg
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_temp_reg
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_reg
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_reg_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_reg_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_reg_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_reg_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_reg_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_reg_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_reg_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_reg_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_reg_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_reg_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_reg_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_reg_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_reg_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_reg_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_reg_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_reg_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_reg_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_reg_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_reg_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_reg_10
+</a>
+
+</li>
+
+</ul>
+<span class="SDCollapseControl" onclick="collapseSD(this, '72b55162-428f-470c-bf59-108c901bfdb6')" onmouseover="this.style.cursor = 'pointer'">
+&#8743; Less
+</span>
+<br />
+</span>
+<br /><h5>
+Multiplexers (44)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Multiplexer_3_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+1-bit 2-to-1 Multiplexer 							: 4
+</span>
+<span name="Multiplexer_3_1" id="Multiplexer_3_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+Switch3_c1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+Switch4_c1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+Switch_c1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+Switch1_c1
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Multiplexer_3_2')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+64-bit 2-to-1 Multiplexer 							: 40
+</span>
+<span name="Multiplexer_3_2" id="Multiplexer_3_2">
+<ul class="SystemdefinedCollapse" id="327d36fe-1d08-480e-819d-ac39b5028452" dataCollapse="off">
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+Switch3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+Switch4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+Switch
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+Switch1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+lut_value_rotated_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+lut_value_rotated_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+lut_value_rotated_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+lut_value_rotated_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+lut_value_rotated_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+lut_value_rotated_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+lut_value_rotated_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+lut_value_rotated_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+lut_value_rotated_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+lut_value_rotated_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_rotated_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_rotated_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_rotated_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_rotated_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_rotated_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_rotated_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_rotated_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_rotated_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_rotated_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_rotated_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_rotated_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_rotated_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_rotated_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_rotated_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_rotated_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_rotated_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_rotated_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_rotated_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_rotated_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_rotated_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+x_rotated_11
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+xout_post
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+y_rotated_11
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+yout_post
+</a>
+
+</li>
+
+</ul>
+<span class="SDCollapseControl" onclick="collapseSD(this, '327d36fe-1d08-480e-819d-ac39b5028452')" onmouseover="this.style.cursor = 'pointer'">
+&#8743; Less
+</span>
+<br />
+</span>
+<br /><h5>
+Number of Shift operators (20)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Static Shift Right_3_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+Static Shift Right 							: 20
+</span>
+<span name="Static Shift Right_3_1" id="Static Shift Right_3_1">
+<ul class="SystemdefinedCollapse" id="8c39edb7-8e67-41f9-9e98-87d81df3eb63" dataCollapse="off">
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+Bit_shift_comp_y_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+Bit_shift_comp_x_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+Bit_shift_comp_y_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+Bit_shift_comp_x_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+Bit_shift_comp_y_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+Bit_shift_comp_x_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+Bit_shift_comp_y_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+Bit_shift_comp_x_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+Bit_shift_comp_y_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+Bit_shift_comp_x_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+Bit_shift_comp_y_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+Bit_shift_comp_x_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+Bit_shift_comp_y_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+Bit_shift_comp_x_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+Bit_shift_comp_y_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+Bit_shift_comp_x_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+Bit_shift_comp_y_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+Bit_shift_comp_x_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+Bit_shift_comp_y_11
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:41')" name="code2model" class="code2model">
+Bit_shift_comp_x_11
+</a>
+
+</li>
+
+</ul>
+<span class="SDCollapseControl" onclick="collapseSD(this, '8c39edb7-8e67-41f9-9e98-87d81df3eb63')" onmouseover="this.style.cursor = 'pointer'">
+&#8743; Less
+</span>
+<br />
+</span>
+<br /><p><hr /></p><h5>
+Report for Subsystem:    <a href="matlab:coder.internal.code2model('gm_untitled1:33')" name="code2model" class="code2model">
+cos + jsin1
+</a>
+
+</h5>
+<h5>
+Adders/Subtractors (71)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Adder_4_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+64x64-bit Adder 							: 34
+</span>
+<span name="Adder_4_1" id="Adder_4_1">
+<ul class="SystemdefinedCollapse" id="ffffd2de-a03b-47b2-8e66-f9afd60a46d4" dataCollapse="off">
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+thetaPlusOnePi
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+thetaPlusTwoPi
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+lut_value_temp_1_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+lut_value_temp_1_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+lut_value_temp_1_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+lut_value_temp_1_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+lut_value_temp_1_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+lut_value_temp_1_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+lut_value_temp_1_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+lut_value_temp_1_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+lut_value_temp_1_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+lut_value_temp_1_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_temp_1_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_temp_0_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_temp_1_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_temp_0_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_temp_1_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_temp_0_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_temp_1_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_temp_0_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_temp_1_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_temp_0_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_temp_1_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_temp_0_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_temp_1_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_temp_0_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_temp_1_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_temp_0_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_temp_1_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_temp_0_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_temp_1_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_temp_0_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_temp_1_11
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_temp_0_11
+</a>
+
+</li>
+
+</ul>
+<span class="SDCollapseControl" onclick="collapseSD(this, 'ffffd2de-a03b-47b2-8e66-f9afd60a46d4')" onmouseover="this.style.cursor = 'pointer'">
+&#8743; Less
+</span>
+<br />
+</span>
+<br /><span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Subtractor_4_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+65-bit Subtractor 							: 3
+</span>
+<span name="Subtractor_4_1" id="Subtractor_4_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+negatepiOver2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_p_negate
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_p_negate
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Subtractor_4_2')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+64x64-bit Subtractor 							: 34
+</span>
+<span name="Subtractor_4_2" id="Subtractor_4_2">
+<ul class="SystemdefinedCollapse" id="08449402-00b2-4f64-a640-ae2943fd8c40" dataCollapse="off">
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+thetaMinusOnePi
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+thetaMinusTwoPi
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+lut_value_temp_0_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+lut_value_temp_0_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+lut_value_temp_0_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+lut_value_temp_0_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+lut_value_temp_0_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+lut_value_temp_0_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+lut_value_temp_0_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+lut_value_temp_0_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+lut_value_temp_0_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+lut_value_temp_0_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_temp_0_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_temp_1_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_temp_0_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_temp_1_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_temp_0_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_temp_1_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_temp_0_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_temp_1_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_temp_0_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_temp_1_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_temp_0_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_temp_1_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_temp_0_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_temp_1_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_temp_0_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_temp_1_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_temp_0_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_temp_1_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_temp_0_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_temp_1_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_temp_0_11
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_temp_1_11
+</a>
+
+</li>
+
+</ul>
+<span class="SDCollapseControl" onclick="collapseSD(this, '08449402-00b2-4f64-a640-ae2943fd8c40')" onmouseover="this.style.cursor = 'pointer'">
+&#8743; Less
+</span>
+<br />
+</span>
+<br /><h5>
+Registers (61)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Register_4_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+1-bit Register 							: 24
+</span>
+<span name="Register_4_1" id="Register_4_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+negate_reg
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Register_4_2')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+64-bit Register 							: 37
+</span>
+<span name="Register_4_2" id="Register_4_2">
+<ul class="SystemdefinedCollapse" id="673a9c03-5ca3-4ae7-a907-42684588ae63" dataCollapse="off">
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+z0_reg
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+z_reg
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+z_reg_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+z_reg_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+z_reg_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+z_reg_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+z_reg_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+z_reg_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+z_reg_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+z_reg_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+z_reg_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_temp0_reg
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_temp_reg
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_reg
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_temp0_reg
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_temp_reg
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_reg
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_reg_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_reg_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_reg_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_reg_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_reg_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_reg_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_reg_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_reg_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_reg_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_reg_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_reg_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_reg_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_reg_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_reg_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_reg_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_reg_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_reg_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_reg_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_reg_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_reg_10
+</a>
+
+</li>
+
+</ul>
+<span class="SDCollapseControl" onclick="collapseSD(this, '673a9c03-5ca3-4ae7-a907-42684588ae63')" onmouseover="this.style.cursor = 'pointer'">
+&#8743; Less
+</span>
+<br />
+</span>
+<br /><h5>
+Multiplexers (44)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Multiplexer_4_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+1-bit 2-to-1 Multiplexer 							: 4
+</span>
+<span name="Multiplexer_4_1" id="Multiplexer_4_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+Switch3_c1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+Switch4_c1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+Switch_c1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+Switch1_c1
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Multiplexer_4_2')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+64-bit 2-to-1 Multiplexer 							: 40
+</span>
+<span name="Multiplexer_4_2" id="Multiplexer_4_2">
+<ul class="SystemdefinedCollapse" id="1658afe7-76f3-4877-8f4d-e1ec18431fa5" dataCollapse="off">
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+Switch3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+Switch4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+Switch
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+Switch1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+lut_value_rotated_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+lut_value_rotated_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+lut_value_rotated_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+lut_value_rotated_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+lut_value_rotated_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+lut_value_rotated_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+lut_value_rotated_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+lut_value_rotated_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+lut_value_rotated_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+lut_value_rotated_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_rotated_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_rotated_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_rotated_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_rotated_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_rotated_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_rotated_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_rotated_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_rotated_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_rotated_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_rotated_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_rotated_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_rotated_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_rotated_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_rotated_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_rotated_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_rotated_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_rotated_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_rotated_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_rotated_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_rotated_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+x_rotated_11
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+xout_post
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+y_rotated_11
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+yout_post
+</a>
+
+</li>
+
+</ul>
+<span class="SDCollapseControl" onclick="collapseSD(this, '1658afe7-76f3-4877-8f4d-e1ec18431fa5')" onmouseover="this.style.cursor = 'pointer'">
+&#8743; Less
+</span>
+<br />
+</span>
+<br /><h5>
+Number of Shift operators (20)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Static Shift Right_4_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+Static Shift Right 							: 20
+</span>
+<span name="Static Shift Right_4_1" id="Static Shift Right_4_1">
+<ul class="SystemdefinedCollapse" id="340ba6bf-ba59-4360-924c-141e67b3c3ed" dataCollapse="off">
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+Bit_shift_comp_y_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+Bit_shift_comp_x_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+Bit_shift_comp_y_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+Bit_shift_comp_x_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+Bit_shift_comp_y_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+Bit_shift_comp_x_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+Bit_shift_comp_y_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+Bit_shift_comp_x_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+Bit_shift_comp_y_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+Bit_shift_comp_x_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+Bit_shift_comp_y_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+Bit_shift_comp_x_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+Bit_shift_comp_y_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+Bit_shift_comp_x_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+Bit_shift_comp_y_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+Bit_shift_comp_x_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+Bit_shift_comp_y_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+Bit_shift_comp_x_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+Bit_shift_comp_y_11
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:36')" name="code2model" class="code2model">
+Bit_shift_comp_x_11
+</a>
+
+</li>
+
+</ul>
+<span class="SDCollapseControl" onclick="collapseSD(this, '340ba6bf-ba59-4360-924c-141e67b3c3ed')" onmouseover="this.style.cursor = 'pointer'">
+&#8743; Less
+</span>
+<br />
+</span>
+<br /><p><hr /></p><h5>
+Report for Subsystem:    <a href="matlab:coder.internal.code2model('gm_untitled1:28')" name="code2model" class="code2model">
+cos + jsin
+</a>
+
+</h5>
+<h5>
+Adders/Subtractors (66)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Adder_5_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+64x64-bit Adder 							: 32
+</span>
+<span name="Adder_5_1" id="Adder_5_1">
+<ul class="SystemdefinedCollapse" id="040ad7d2-da2c-48a0-9291-fb94a68020c8" dataCollapse="off">
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+lut_value_temp_1_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+lut_value_temp_1_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+lut_value_temp_1_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+lut_value_temp_1_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+lut_value_temp_1_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+lut_value_temp_1_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+lut_value_temp_1_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+lut_value_temp_1_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+lut_value_temp_1_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+lut_value_temp_1_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_temp_1_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_temp_0_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_temp_1_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_temp_0_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_temp_1_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_temp_0_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_temp_1_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_temp_0_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_temp_1_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_temp_0_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_temp_1_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_temp_0_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_temp_1_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_temp_0_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_temp_1_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_temp_0_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_temp_1_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_temp_0_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_temp_1_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_temp_0_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_temp_1_11
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_temp_0_11
+</a>
+
+</li>
+
+</ul>
+<span class="SDCollapseControl" onclick="collapseSD(this, '040ad7d2-da2c-48a0-9291-fb94a68020c8')" onmouseover="this.style.cursor = 'pointer'">
+&#8743; Less
+</span>
+<br />
+</span>
+<br /><span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Subtractor_5_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+64x64-bit Subtractor 							: 32
+</span>
+<span name="Subtractor_5_1" id="Subtractor_5_1">
+<ul class="SystemdefinedCollapse" id="f8a4995e-3364-4b68-9c8a-f84c264d4c86" dataCollapse="off">
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+lut_value_temp_0_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+lut_value_temp_0_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+lut_value_temp_0_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+lut_value_temp_0_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+lut_value_temp_0_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+lut_value_temp_0_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+lut_value_temp_0_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+lut_value_temp_0_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+lut_value_temp_0_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+lut_value_temp_0_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_temp_0_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_temp_1_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_temp_0_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_temp_1_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_temp_0_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_temp_1_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_temp_0_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_temp_1_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_temp_0_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_temp_1_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_temp_0_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_temp_1_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_temp_0_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_temp_1_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_temp_0_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_temp_1_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_temp_0_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_temp_1_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_temp_0_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_temp_1_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_temp_0_11
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_temp_1_11
+</a>
+
+</li>
+
+</ul>
+<span class="SDCollapseControl" onclick="collapseSD(this, 'f8a4995e-3364-4b68-9c8a-f84c264d4c86')" onmouseover="this.style.cursor = 'pointer'">
+&#8743; Less
+</span>
+<br />
+</span>
+<br /><span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Subtractor_5_2')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+65-bit Subtractor 							: 2
+</span>
+<span name="Subtractor_5_2" id="Subtractor_5_2">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_p_negate
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_p_negate
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><h5>
+Registers (61)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Register_5_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+1-bit Register 							: 24
+</span>
+<span name="Register_5_1" id="Register_5_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+negate_reg
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Register_5_2')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+64-bit Register 							: 37
+</span>
+<span name="Register_5_2" id="Register_5_2">
+<ul class="SystemdefinedCollapse" id="27baaa3b-2db1-4ec1-b6d7-6398142ece21" dataCollapse="off">
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+z0_reg
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+z_reg
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+z_reg_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+z_reg_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+z_reg_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+z_reg_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+z_reg_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+z_reg_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+z_reg_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+z_reg_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+z_reg_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_temp0_reg
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_temp_reg
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_reg
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_temp0_reg
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_temp_reg
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_reg
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_reg_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_reg_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_reg_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_reg_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_reg_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_reg_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_reg_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_reg_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_reg_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_reg_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_reg_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_reg_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_reg_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_reg_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_reg_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_reg_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_reg_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_reg_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_reg_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_reg_10
+</a>
+
+</li>
+
+</ul>
+<span class="SDCollapseControl" onclick="collapseSD(this, '27baaa3b-2db1-4ec1-b6d7-6398142ece21')" onmouseover="this.style.cursor = 'pointer'">
+&#8743; Less
+</span>
+<br />
+</span>
+<br /><h5>
+Multiplexers (36)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Multiplexer_5_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+64-bit 2-to-1 Multiplexer 							: 36
+</span>
+<span name="Multiplexer_5_1" id="Multiplexer_5_1">
+<ul class="SystemdefinedCollapse" id="1b7607e9-7aa6-4566-a6dc-3372ee45bcd9" dataCollapse="off">
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+lut_value_rotated_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+lut_value_rotated_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+lut_value_rotated_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+lut_value_rotated_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+lut_value_rotated_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+lut_value_rotated_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+lut_value_rotated_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+lut_value_rotated_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+lut_value_rotated_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+lut_value_rotated_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_rotated_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_rotated_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_rotated_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_rotated_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_rotated_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_rotated_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_rotated_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_rotated_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_rotated_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_rotated_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_rotated_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_rotated_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_rotated_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_rotated_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_rotated_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_rotated_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_rotated_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_rotated_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_rotated_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_rotated_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+x_rotated_11
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+xout_post
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+y_rotated_11
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+yout_post
+</a>
+
+</li>
+
+</ul>
+<span class="SDCollapseControl" onclick="collapseSD(this, '1b7607e9-7aa6-4566-a6dc-3372ee45bcd9')" onmouseover="this.style.cursor = 'pointer'">
+&#8743; Less
+</span>
+<br />
+</span>
+<br /><h5>
+Number of Shift operators (20)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Static Shift Right_5_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+Static Shift Right 							: 20
+</span>
+<span name="Static Shift Right_5_1" id="Static Shift Right_5_1">
+<ul class="SystemdefinedCollapse" id="5fa34ffd-1e2e-432c-877f-6147b3fd6e93" dataCollapse="off">
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+Bit_shift_comp_y_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+Bit_shift_comp_x_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+Bit_shift_comp_y_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+Bit_shift_comp_x_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+Bit_shift_comp_y_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+Bit_shift_comp_x_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+Bit_shift_comp_y_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+Bit_shift_comp_x_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+Bit_shift_comp_y_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+Bit_shift_comp_x_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+Bit_shift_comp_y_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+Bit_shift_comp_x_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+Bit_shift_comp_y_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+Bit_shift_comp_x_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+Bit_shift_comp_y_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+Bit_shift_comp_x_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+Bit_shift_comp_y_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+Bit_shift_comp_x_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+Bit_shift_comp_y_11
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:31')" name="code2model" class="code2model">
+Bit_shift_comp_x_11
+</a>
+
+</li>
+
+</ul>
+<span class="SDCollapseControl" onclick="collapseSD(this, '5fa34ffd-1e2e-432c-877f-6147b3fd6e93')" onmouseover="this.style.cursor = 'pointer'">
+&#8743; Less
+</span>
+<br />
+</span>
+<br /><p><hr /></p><h5>
+Report for Subsystem:    <a href="matlab:coder.internal.code2model('gm_untitled1:23')" name="code2model" class="code2model">
+Trigonometric Function
+</a>
+
+</h5>
+<h5>
+Adders/Subtractors (68)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Adder_6_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+16x16-bit Adder 							: 33
+</span>
+<span name="Adder_6_1" id="Adder_6_1">
+<ul class="SystemdefinedCollapse" id="da0ed006-3152-4af2-a60e-df96003cf927" dataCollapse="off">
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+thetaPlusOnePi
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+thetaPlusTwoPi
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+lut_value_temp_1_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+lut_value_temp_1_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+lut_value_temp_1_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+lut_value_temp_1_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+lut_value_temp_1_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+lut_value_temp_1_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+lut_value_temp_1_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+lut_value_temp_1_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+lut_value_temp_1_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+lut_value_temp_1_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_temp_0_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+x_temp_1_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_temp_0_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+x_temp_1_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_temp_0_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+x_temp_1_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_temp_0_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+x_temp_1_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_temp_0_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+x_temp_1_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_temp_0_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+x_temp_1_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_temp_0_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+x_temp_1_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_temp_0_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+x_temp_1_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_temp_0_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+x_temp_1_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_temp_0_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+x_temp_1_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_temp_0_11
+</a>
+
+</li>
+
+</ul>
+<span class="SDCollapseControl" onclick="collapseSD(this, 'da0ed006-3152-4af2-a60e-df96003cf927')" onmouseover="this.style.cursor = 'pointer'">
+&#8743; Less
+</span>
+<br />
+</span>
+<br /><span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Subtractor_6_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+17-bit Subtractor 							: 2
+</span>
+<span name="Subtractor_6_1" id="Subtractor_6_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+negatepiOver2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_p_negate
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Subtractor_6_2')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+16x16-bit Subtractor 							: 33
+</span>
+<span name="Subtractor_6_2" id="Subtractor_6_2">
+<ul class="SystemdefinedCollapse" id="a95779fb-5e3a-4521-9a92-8578af80ad54" dataCollapse="off">
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+thetaMinusOnePi
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+thetaMinusTwoPi
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+lut_value_temp_0_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+lut_value_temp_0_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+lut_value_temp_0_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+lut_value_temp_0_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+lut_value_temp_0_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+lut_value_temp_0_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+lut_value_temp_0_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+lut_value_temp_0_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+lut_value_temp_0_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+lut_value_temp_0_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_temp_1_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+x_temp_0_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_temp_1_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+x_temp_0_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_temp_1_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+x_temp_0_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_temp_1_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+x_temp_0_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_temp_1_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+x_temp_0_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_temp_1_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+x_temp_0_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_temp_1_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+x_temp_0_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_temp_1_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+x_temp_0_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_temp_1_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+x_temp_0_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_temp_1_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+x_temp_0_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_temp_1_11
+</a>
+
+</li>
+
+</ul>
+<span class="SDCollapseControl" onclick="collapseSD(this, 'a95779fb-5e3a-4521-9a92-8578af80ad54')" onmouseover="this.style.cursor = 'pointer'">
+&#8743; Less
+</span>
+<br />
+</span>
+<br /><h5>
+Registers (60)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Register_6_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+1-bit Register 							: 24
+</span>
+<span name="Register_6_1" id="Register_6_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+negate_reg
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Register_6_2')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+16-bit Register 							: 36
+</span>
+<span name="Register_6_2" id="Register_6_2">
+<ul class="SystemdefinedCollapse" id="fa9250d4-a106-4d89-b2e1-8e6c603b8b56" dataCollapse="off">
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+z0_reg
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+z_reg
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+z_reg_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+z_reg_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+z_reg_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+z_reg_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+z_reg_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+z_reg_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+z_reg_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+z_reg_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+z_reg_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_temp0_reg
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_temp_reg
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_reg
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+x_temp0_reg
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+x_temp_reg
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+x_reg
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_reg_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+x_reg_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_reg_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+x_reg_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_reg_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+x_reg_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_reg_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+x_reg_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_reg_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+x_reg_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_reg_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+x_reg_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_reg_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+x_reg_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_reg_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+x_reg_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_reg_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+x_reg_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_reg_10
+</a>
+
+</li>
+
+</ul>
+<span class="SDCollapseControl" onclick="collapseSD(this, 'fa9250d4-a106-4d89-b2e1-8e6c603b8b56')" onmouseover="this.style.cursor = 'pointer'">
+&#8743; Less
+</span>
+<br />
+</span>
+<br /><h5>
+Multiplexers (41)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Multiplexer_6_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+1-bit 2-to-1 Multiplexer 							: 4
+</span>
+<span name="Multiplexer_6_1" id="Multiplexer_6_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+Switch3_c1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+Switch4_c1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+Switch_c1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+Switch1_c1
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Multiplexer_6_2')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+16-bit 2-to-1 Multiplexer 							: 37
+</span>
+<span name="Multiplexer_6_2" id="Multiplexer_6_2">
+<ul class="SystemdefinedCollapse" id="befb1236-fcd2-4d32-8916-102406243a4c" dataCollapse="off">
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+Switch3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+Switch4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+Switch
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+Switch1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+lut_value_rotated_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+lut_value_rotated_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+lut_value_rotated_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+lut_value_rotated_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+lut_value_rotated_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+lut_value_rotated_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+lut_value_rotated_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+lut_value_rotated_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+lut_value_rotated_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+lut_value_rotated_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_rotated_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+x_rotated_1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_rotated_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+x_rotated_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_rotated_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+x_rotated_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_rotated_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+x_rotated_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_rotated_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+x_rotated_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_rotated_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+x_rotated_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_rotated_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+x_rotated_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_rotated_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+x_rotated_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_rotated_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+x_rotated_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_rotated_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+x_rotated_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+y_rotated_11
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+yout_post
+</a>
+
+</li>
+
+</ul>
+<span class="SDCollapseControl" onclick="collapseSD(this, 'befb1236-fcd2-4d32-8916-102406243a4c')" onmouseover="this.style.cursor = 'pointer'">
+&#8743; Less
+</span>
+<br />
+</span>
+<br /><h5>
+Number of Shift operators (19)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Static Shift Right_6_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+Static Shift Right 							: 19
+</span>
+<span name="Static Shift Right_6_1" id="Static Shift Right_6_1">
+<ul class="SystemdefinedCollapse" id="6ee9c841-20e4-4196-b653-abcb789921e5" dataCollapse="off">
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+Bit_shift_comp_x_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+Bit_shift_comp_y_2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+Bit_shift_comp_x_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+Bit_shift_comp_y_3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+Bit_shift_comp_x_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+Bit_shift_comp_y_4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+Bit_shift_comp_x_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+Bit_shift_comp_y_5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+Bit_shift_comp_x_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+Bit_shift_comp_y_6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+Bit_shift_comp_x_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+Bit_shift_comp_y_7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+Bit_shift_comp_x_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+Bit_shift_comp_y_8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+Bit_shift_comp_x_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+Bit_shift_comp_y_9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+Bit_shift_comp_x_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+Bit_shift_comp_y_10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('gm_untitled1:26')" name="code2model" class="code2model">
+Bit_shift_comp_x_11
+</a>
+
+</li>
+
+</ul>
+<span class="SDCollapseControl" onclick="collapseSD(this, '6ee9c841-20e4-4196-b653-abcb789921e5')" onmouseover="this.style.cursor = 'pointer'">
+&#8743; Less
+</span>
+<br />
+</span>
+<br /><p><hr /></p>
+</body>
+
+</html>
